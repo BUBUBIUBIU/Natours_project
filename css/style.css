@@ -6,3 +6,79 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+/* 我们之前用的那个normalize.css其实就是一种reset，这里是universe selector */
+* {
+    margin: 0;
+    padding: 0;
+    /* border-box模式下，margin和padding将不再被计入总height，width */
+    box-sizing: border-box;
+}
+
+body {
+    /* These properties are inherited by all children of body */
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    /* 1.7 tims of predefined line weight */
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+
+.header {
+    height: 95vh;
+    /* the first color background is over img ground */
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba(126, 213, 111, 0.8), 
+        rgba(40, 180, 131, 0.8)), 
+    url(../img/hero.jpg);
+    /* cover means whatever the width of the view point,
+    it try to fit the element inside of box */
+    background-size: cover;
+    /* top means the top side of img stays with top side of box */
+    background-position: top;
+    /* 4 ccoordinates are 4 points of polygon, 100% are total height of header */
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    position: relative;
+}
+
+.logo-box {
+    /* the reference of two 40pxs is parent with position relative */
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    /* if we set the height, the width will be scale automatically */
+    height: 35px;
+}
+
+.text-box{
+    /* the top and left side of h1 is pushed 50% of header (parent element) */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* the reference is h1 itself */
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+}
