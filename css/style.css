@@ -51,19 +51,19 @@ body {
     position: relative;
 }
 
-.logo-box {
+.header__logo-box {
     /* the reference of two 40pxs is parent with position relative */
     position: absolute;
     top: 4rem;
     left: 4rem;
 }
 
-.logo {
+.header__logo {
     /* if we set the height, the width will be scale automatically */
     height: 3.5rem;
 }
 
-.text-box{
+.header__text-box{
     /* the top and left side of h1 is pushed 50% of header (parent element) */
     position: absolute;
     top: 40%;
@@ -81,7 +81,7 @@ body {
     margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
@@ -97,7 +97,7 @@ body {
     */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
@@ -176,7 +176,7 @@ body {
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
 }
 
-.btn-white {
+.btn--white {
     background-color: #fff;
     color: #777;
 }
@@ -196,7 +196,7 @@ body {
     transition: all .4s;
 }
 
-.btn-white::after {
+.btn--white::after {
     background-color: #fff;
 }
 
@@ -206,7 +206,7 @@ body {
     opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveInBottom .5s ease-out .75s;
     /* it means the style will absolutely not used before animation starts */
     animation-fill-mode: backwards;
