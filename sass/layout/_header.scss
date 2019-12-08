@@ -1,0 +1,39 @@
+.header {
+    height: 95vh;
+    /* the first color background is over img ground */
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)), 
+    url(../img/hero.jpg);
+    /* cover means whatever the width of the view point,
+    it try to fit the element inside of box */
+    background-size: cover;
+    /* top means the top side of img stays with top side of box */
+    background-position: top;
+    /* 4 ccoordinates are 4 points of polygon, 100% are total height of header */
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    position: relative;
+
+    &__logo-box {
+        /* the reference of two 40pxs is parent with position relative */
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        /* if we set the height, the width will be scale automatically */
+        height: 3.5rem;
+    }
+    
+    &__text-box{
+        /* the top and left side of h1 is pushed 50% of header (parent element) */
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        /* the reference is h1 itself */
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}

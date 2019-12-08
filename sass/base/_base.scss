@@ -1,0 +1,19 @@
+/* 我们之前用的那个normalize.css其实就是一种reset，这里是universe selector */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+ 
+html {
+    /* root font-size */ 
+    // This defines what 1rem is, so it is in here
+    font-size: 62.5%;
+}
+
+body {
+    /* border-box模式下，margin和padding将不再被计入总height，width */
+    box-sizing: border-box;
+}

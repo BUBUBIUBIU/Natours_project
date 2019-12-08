@@ -1,0 +1,63 @@
+.btn{
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        /* we  don't wanna underline */
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        /* anchor still inline, but is a block */
+        display: inline-block;
+        border-radius: 10rem;
+        /* all property are animate */
+        transition: all .2s;
+        position: relative;
+        font-size: 1.6rem;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        /* shadow: x, y, bulr size, color */
+        box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+        /* btn in hover state, the presentation of after */
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    
+    &:active{
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+    }
+
+    &::after {
+        content: '';
+        display: inline-block;
+        /* 100% of button height and width */
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        /* the reference is btn ? */
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+    
+        &::after {
+            background-color: #fff;
+        }
+    }
+    
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        /* it means the style will absolutely not used before animation starts */
+        animation-fill-mode: backwards;
+    }
+}
