@@ -7,83 +7,6 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
-/* 我们之前用的那个normalize.css其实就是一种reset，这里是universe selector */
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit; }
-
-html {
-  /* root font-size */
-  font-size: 62.5%; }
-
-body {
-  /* These properties are inherited by all children of body */
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  /* 1.7 tims of predefined line weight */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  /* border-box模式下，margin和padding将不再被计入总height，width */
-  box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  /* the first color background is over img ground */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  /* cover means whatever the width of the view point,
-    it try to fit the element inside of box */
-  background-size: cover;
-  /* top means the top side of img stays with top side of box */
-  background-position: top;
-  /* 4 ccoordinates are 4 points of polygon, 100% are total height of header */
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-  position: relative; }
-  .header__logo-box {
-    /* the reference of two 40pxs is parent with position relative */
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    /* if we set the height, the width will be scale automatically */
-    height: 3.5rem; }
-  .header__text-box {
-    /* the top and left side of h1 is pushed 50% of header (parent element) */
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    /* the reference is h1 itself */
-    transform: translate(-50%, -50%);
-    text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    /* 
-        animation-delay: 3s;
-        animation-iteration-count: 3; 
-        */ }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.74rem;
-    animation: moveInRight 1s ease-out; }
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -112,6 +35,56 @@ body {
   100% {
     opacity: 1;
     transform: translate(0); } }
+
+/* 我们之前用的那个normalize.css其实就是一种reset，这里是universe selector */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  /* root font-size */
+  font-size: 62.5%; }
+
+body {
+  /* border-box模式下，margin和padding将不再被计入总height，width */
+  box-sizing: border-box; }
+
+body {
+  /* These properties are inherited by all children of body */
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  /* 1.7 tims of predefined line weight */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* 
+        animation-delay: 3s;
+        animation-iteration-count: 3; 
+        */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+    animation: moveInRight 1s ease-out; }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -163,3 +136,60 @@ body {
   animation: moveInBottom .5s ease-out .75s;
   /* it means the style will absolutely not used before animation starts */
   animation-fill-mode: backwards; }
+
+.row {
+  max-width: 114rem;
+  background-color: #ccc;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: '';
+    display: table;
+    clear: both; }
+  .row [class^='col-'] {
+    background-color: orangered;
+    float: left; }
+    .row [class^='col-']:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+.header {
+  height: 95vh;
+  /* the first color background is over img ground */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  /* cover means whatever the width of the view point,
+    it try to fit the element inside of box */
+  background-size: cover;
+  /* top means the top side of img stays with top side of box */
+  background-position: top;
+  /* 4 ccoordinates are 4 points of polygon, 100% are total height of header */
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  position: relative; }
+  .header__logo-box {
+    /* the reference of two 40pxs is parent with position relative */
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    /* if we set the height, the width will be scale automatically */
+    height: 3.5rem; }
+  .header__text-box {
+    /* the top and left side of h1 is pushed 50% of header (parent element) */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* the reference is h1 itself */
+    transform: translate(-50%, -50%);
+    text-align: center; }
