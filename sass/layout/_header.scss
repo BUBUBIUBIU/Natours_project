@@ -12,6 +12,7 @@
     /* top means the top side of img stays with top side of box */
     background-position: top;
     /* 4 ccoordinates are 4 points of polygon, 100% are total height of header */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
     position: relative;
 
