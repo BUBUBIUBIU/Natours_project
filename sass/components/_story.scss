@@ -8,7 +8,7 @@
     padding-left: 9rem;
     font-size: $default-font-size;
     transform: skewX(-12deg);
- 
+
     &__shape {
         width: 15rem;
         height: 15rem;
@@ -27,15 +27,15 @@
     &__img {
         height: 100%;
         transform: translateX(-4rem) scale(1.4);
-        // 不用backface-visibility?
-        // backface-visibility: hidden;
+        // the backface-visibility seems useless
+        backface-visibility: hidden;
         transition: all .5s;
     }
 
     &__text {
         transform: skewX(12deg);
     }
- 
+
     &__caption {
         position: absolute;
         top: 50%;
