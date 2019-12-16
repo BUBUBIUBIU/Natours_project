@@ -264,14 +264,13 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0 1.5rem 4rem black;
-    backface-visibility: hidden; }
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
     .card__side--front {
       background-color: #fff; }
     .card__side--back {
-      background-color: green;
       transform: rotateY(180deg); }
       .card__side--back-1 {
         background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
@@ -290,7 +289,7 @@ body {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     border-top-left-radius: 3px;
-    border-top-left-radius: 3px; }
+    border-top-right-radius: 3px; }
     .card__picture--1 {
       background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
     .card__picture--2 {
@@ -401,8 +400,7 @@ body {
   height: 100%;
   width: 100%;
   z-index: -1;
-  opacity: .15;
-  overflow: hidden; }
+  opacity: .15; }
   .bg-video__content {
     height: 100%;
     width: 100%;
@@ -508,12 +506,12 @@ body {
     overflow: hidden;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
-    transition: all .4s .2s; }
+    transition: all .5s .2s; }
   .popup__left {
     width: 33.333333%;
     display: table-cell; }
   .popup__right {
-    width: 66.666667%;
+    width: 66.6666667%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
@@ -588,9 +586,9 @@ body {
   /* top means the top side of img stays with top side of box */
   background-position: top;
   /* 4 ccoordinates are 4 points of polygon, 100% are total height of header */
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-  position: relative; }
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
   .header__logo-box {
     /* the reference of two 40pxs is parent with position relative */
     position: absolute;
@@ -734,7 +732,7 @@ body {
     content: '';
     position: absolute;
     left: 0;
-    transition: all 4s; }
+    transition: all .4s; }
   .navigation__icon::before {
     top: -.8rem; }
   .navigation__icon::after {

@@ -14,7 +14,7 @@
         position: relative;
         font-size: $default-font-size;
 
-        // Change for the <button> element
+        //Change for the <button> element
         border: none;
         cursor: pointer;
     }
@@ -55,7 +55,7 @@
             background-color: $color-primary;
         }
     }
-
+    
     &::after {
         content: '';
         display: inline-block;

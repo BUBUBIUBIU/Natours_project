@@ -6,8 +6,8 @@
     width: 100%;
     z-index: -1;
     opacity: .15;
-    // ??加不加hidden没差？需对比
-    overflow: hidden;
+
+    // overflow: hidden;
 
     &__content {
         height: 100%;

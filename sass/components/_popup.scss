@@ -3,7 +3,7 @@
     width: 100%;
     position: fixed;
     top: 0;
-    left: 0;  
+    left: 0;
     background-color: rgba($color-black, .8);
     z-index: 9999;
     opacity: 0;
@@ -21,7 +21,7 @@
         overflow: hidden;
         opacity: 0;
         transform: translate(-50%, -50%) scale(.25);
-        transition: all .4s .2s;
+        transition: all .5s .2s;
     }
 
     &__left {
@@ -30,7 +30,7 @@
     }
 
     &__right {
-        width: 66.666667%;
+        width: 66.6666667%;
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;
@@ -80,7 +80,8 @@
             right: 2.5rem;
             font-size: 3rem;
             text-decoration: none;
-            // ?
+            // This is because the text-align in parent element only effect childern
+            // which are non-div 
             display: inline-block;
             transition: all .2s;
             line-height: 1;
