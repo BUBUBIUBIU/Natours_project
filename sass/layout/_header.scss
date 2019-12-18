@@ -1,11 +1,11 @@
 .header {
-    height: 95vh;
+    height: 85vh;
     /* the first color background is over img ground */
     background-image: linear-gradient(
         to right bottom,
         rgba($color-primary-light, 0.8),
         rgba($color-primary-dark, 0.8)),
-    url(../img/hero.jpg);
+    url(../img/hero-small.jpg);
     /* cover means whatever the width of the view point,
     it try to fit the element inside of box */
     background-size: cover;
@@ -15,6 +15,11 @@
     position: relative;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    @include respond(phone) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
 
     &__logo-box {
         /* the reference of two 40pxs is parent with position relative */
