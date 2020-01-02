@@ -26,7 +26,7 @@ html {
 }
 
 body {
-    /* border-box模式下，margin和padding将不再被计入总height，width */
+    /* In border-box，border and padding are considered into height，width */
     box-sizing: border-box;
     padding: 3rem;
 
